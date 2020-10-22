@@ -1,6 +1,7 @@
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(dplyr,
                ggplot2,
+               RefManageR,
                here,
                purrr,
                magick,
