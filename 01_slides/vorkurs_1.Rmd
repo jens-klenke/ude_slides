@@ -436,21 +436,23 @@ seq_along(x)    # Vektor mit Indizes der Elemente von x
 3. Sie kommen zu dem Schluss, dass die höchste und die niedrigste Zahl zu verzerrten Ergebnissen führen und entscheiden darum, diese Werte zu ignorieren. Ersetzen Sie beide Werte durch `NA` und berechnen Sie die Mittelwerte aus Aufgabe 2 erneut.
 
 ---
+# Vektoren
 ## Übungsaufgaben zu Vektoren --- 2
 
 <ol start="4">
-    <li>Nutzen Sie die Funktion <code>seq()</code> um die Folge $0, 0.5, 1, 1.5, \ldots, 99, 99.5, 100$ zu erzeugen. Wie viele Elemente besitzt dieser Vektor? Überprüfen Sie Ihre Vermutung mit <code>length()</code></li>
-    <li>Erzeugen Sie einen neuen Vektor <code>characters</code> mit den Elementen $\{"a", "a", "a", "b"," b"," b", "b", "c", "c"\}.$ Finden Sie heraus, wie die Funktion <code>rep()</code> funktioniert und nutzen Sie diese.</li>
-    <li>Überschreiben Sie nun den Vektor <code>characters</code> mit $\{"x", "y", "z", "x", "y", "z", "x", "y", "z", "x", "y", "z"\}.$ Nutzen Sie wieder die Funktion <code>rep()</code>.</li>
+    <li>Nutzen Sie die Funktion <code>seq()</code> um die Folge $\begin{pmatrix} 0, 0.5, 1, 1.5, \ldots, 99, 99.5, 100 \end{pmatrix}$ zu erzeugen. Wie viele Elemente besitzt dieser Vektor? Überprüfen Sie Ihre Vermutung mit <code>length()</code></li>
+    <li>Erzeugen Sie einen neuen Vektor <code>characters</code> mit den Elementen $\begin{pmatrix} a & a & a  & b & b & b & b & c & c \\ \end{pmatrix}$. Finden Sie heraus, wie die Funktion <code>rep()</code> funktioniert und nutzen Sie diese.</li>
+    <li>Überschreiben Sie nun den Vektor <code>characters</code> mit $\begin{pmatrix} x & y & z & x & y & z & x & y & z \\ \end{pmatrix}$. Nutzen Sie wieder die Funktion <code>rep()</code>.</li>
     <li>Ersetzen Sie nun alle Einträge mit dem Inhalt <code>"z"</code> durch ein <code>"v"</code>.</li>
 </ol>
 
- 
-
 ---
-## Übungsaufgaben zu Vektoren --- 4    
+# Vektoren
+## Übungsaufgaben zu Vektoren --- 3
+<ol start="8">
+    <li> Kopieren Sie folgenden Code in Ihr <code>R</code>-Skript und berechen Sie $a + b$, $a + x$,  $a + y$ und $a + z$. Finden Sie heraus, wie <code>R</code> jeweils vorgeht.</li>
+</ol>
 
-8. Kopieren Sie folgenden Code in Ihr \texttt{R}-Skript und berechen Sie $a + b$, $a + x$,  $a + y$ und $a + z$. Finden Sie heraus, wie \texttt{R} jeweils vorgeht.
 
 ```{r}
 a <- c(2, 5, 7, 5, 12, 6)
@@ -460,18 +462,156 @@ y <- 3
 z <- c(1, 2, 3, 4)
 ```   
 
-9. Erzeugen Sie einen Vektor mit den Elementen $\{1, 2, 3, "a", "b"\}$ (also eine Mischung aus numeric und character). Was passiert? Schreiben Sie einen Kommentar. 
+<ol start="9">
+    <li>Erzeugen Sie einen Vektor mit den Elementen $\{1, 2, 3, "a", "b"\}$ (also eine Mischung aus numeric und character). Was passiert? Schreiben Sie einen Kommentar.</li>
+</ol>
+
+---
+# Matrizen
+## Matrizen erzeugen
+
+<br></br>
+Wir können mehrere Vektoren des gleichen Datentyps und gleicher Länge zu einer Matrix zusammenfassen. 
+
+```{r}
+x <- 1:3
+y <- 4:6
+
+xy <- cbind(x, y)
+xy
+```
+
+---
+# Matrizen
+## Matrizen erzeugen
+
+<br></br>
+Außerdem können wir auch einen einzelnen Vektor in Matrixform bringen. 
+
+
+```{r}
+matrix(1:6, ncol = 2)
+```
+
+---
+# Matrizen
+## Matrixsubsetting 
+
+Um ein Element einer Matrix anzusprechen, müssen wir **zwei** Indizes verwenden: Einen für die *Zeile* und einen für die *Spalte* des gewünschten Elements. 
+
+<br> </br>
+Das folgende Beispiel zeigt, wie man das Element in der 3. Zeile und der 2. Spalte erhält. 
+
+```{r}
+X <- matrix(1:6, ncol = 2)
+X[3, 2]
+```
+
+---
+# Matrizen
+## Matrixsubsetting 
+
+<br></br>
+Um dieses Element zu ändern, nutzen wir wieder den Zuweisungsoperator `<-`.
+
+```{r}
+X[3, 2] <- 13
+X
+```
+
+---
+# Matrizen
+## Matrixsubsetting 
+
+Um ganze Spalten der Matrix zu erhalten, wird der Index für die *Zeile* freigelassen.  
+```{r}
+X[, 1] # gibt die 1. Spalte zurück
+```
+
+Um ganze Zeilen zu erhalten, wird der Index für die *Spalte* freigelassen. 
+
+```{r}
+X[2:3, ] # gibt die 2. und 3. Zeile zurück
+```
+
+---
+# Matrizen
+## Matrixalgebra --- Übersicht 
+
+```{r, results='hide'}
+A <- cbind(c(13, 4, 8), c(2, 8.2, 1))
+B <- cbind(c(9, 2.3, -1), c(12, 53, -3))
+
+A * B             # Elementweise Multiplikation 
+
+C <- t(A) %*% B   # Matrixmultiplikation
+
+t(A)              # Transponieren
+
+diag(C)           # Elemente der Hauptdiagonale
+
+solve(C)          # Invertieren
+
+eigen(C)          # Eigenwerte und Eigenvektoren
+```
+
+---
+# Matrizen
+## Matrixbasierte Funktionen 
+
+<br></br>
+Wie bei Vektoren gibt es auch eine Reihe von Funktionen für Matrizen. 
+
+```{r, results='hide'}
+X <- matrix(1:40, ncol = 4)
+
+colSums(X)   # Spaltensummen
+
+rowSums(X)   # Zeilenensummen
+
+colMeans(X)  # Spaltenmittelwerte
+
+rowMeans(X)  # Zeilenmittelwerte
+```
+
+---
+# Matritzen
+## Übungsaufgaben zu Matritzen --- 1
+
+1. Erzeugen Sie mit dem Inputvektor `1:12` und <code>matrix()</code> folgende Matrix `X`. 
+
+$$X =\begin{pmatrix} 
+    1 & 2 \\ 
+    3 & 4 \\
+    5 & 6 \\
+    7 & 8 \\
+    9 & 10 \\
+    11 & 12
+  \end{pmatrix}$$
+
+<ol start="2">
+    <li>Nehmen Sie die Matrix aus 1. und vertauschen Sie die Spalten. Das Ergebnis soll an die Variable `Y` übergeben werden.</li>
+    <li>Berechnen Sie $XY^{T}$.</li>
+</ol>
+ 
+
+---
+# Matritzen
+## Übungsaufgaben zu Matritzen --- 2
+<br></br>
+
+<ol start="4">
+    <li>Erzeugen Sie eine $2 \times 2$ Matrix aus der 2. und 5. Zeile der Matrix `X`.</li>
+    <li>Erzeugen Sie die Matrix `X` mit `X <- matrix(8:-7, nrow = 4)`.</li>
+    <ul>
+    <li>Ersetzen Sie die Elemente auf der Hauptdiagonalen durch `NA`s.</li>
+    <li>Ersetzen Sie jetzt alle `NA`s in der Matrix mit dem Wert $1$. Nutzen Sie dazu die Funktion `is.na()`.</li>
+    </ul>
+</ol>
 
 
 
-
-
-
-
-
-
-
-
+    
 
 
 
