@@ -601,7 +601,7 @@ $$X =\begin{pmatrix}
 <br></br>
 
 <ol start="4">
-    <li>Erzeugen Sie eine $2 \times 2$ Matrix aus der 2. und 5. Zeile der Matrix `X`.</li>
+    <li>Erzeugen Sie eine \(2 \times 2\) Matrix aus der 2. und 5. Zeile der Matrix `X`.</li>
     <li>Erzeugen Sie die Matrix `X` mit `X <- matrix(8:-7, nrow = 4)`.</li>
     <ul>
     <li>Ersetzen Sie die Elemente auf der Hauptdiagonalen durch `NA`s.</li>
