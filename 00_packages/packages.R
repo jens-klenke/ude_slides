@@ -11,4 +11,6 @@ pacman::p_load(dplyr,
                papeR,
                kableExtra,
                gridExtra,
-               cowplot)
+               cowplot,
+               png,
+               knitr)

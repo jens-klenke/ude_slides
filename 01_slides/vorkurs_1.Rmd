@@ -450,7 +450,7 @@ seq_along(x)    # Vektor mit Indizes der Elemente von x
 # Vektoren
 ## Übungsaufgaben zu Vektoren --- 3
 <ol start="8">
-    <li> Kopieren Sie folgenden Code in Ihr <code>R</code>-Skript und berechen Sie $a + b$, $a + x$,  $a + y$ und $a + z$. Finden Sie heraus, wie <code>R</code> jeweils vorgeht.</li>
+    <li> Kopieren Sie folgenden Code in Ihr <code>R</code>-Skript und berechen Sie \(a + b\), \(a + x\),  \(a + y\) und \(a + z\). Finden Sie heraus, wie <code>R</code> jeweils vorgeht.</li>
 </ol>
 
 
@@ -463,7 +463,7 @@ z <- c(1, 2, 3, 4)
 ```   
 
 <ol start="9">
-    <li>Erzeugen Sie einen Vektor mit den Elementen $\{1, 2, 3, "a", "b"\}$ (also eine Mischung aus numeric und character). Was passiert? Schreiben Sie einen Kommentar.</li>
+    <li>Erzeugen Sie einen Vektor mit den Elementen \(\begin{pmatrix} 1 & 2 & 3 & a & b \\ \end{pmatrix}\) (Also eine Mischung aus numeric und character). Was passiert? Schreiben Sie einen Kommentar.</li>
 </ol>
 
 ---
@@ -602,10 +602,10 @@ $$X =\begin{pmatrix}
 
 <ol start="4">
     <li>Erzeugen Sie eine \(2 \times 2\) Matrix aus der 2. und 5. Zeile der Matrix `X`.</li>
-    <li>Erzeugen Sie die Matrix `X` mit `X <- matrix(8:-7, nrow = 4)`.</li>
+    <li>Erzeugen Sie die Matrix `X` mit \(X <- \text{matrix}(8:-7, \text{nrow} = 4)\).</li>
     <ul>
     <li>Ersetzen Sie die Elemente auf der Hauptdiagonalen durch `NA`s.</li>
-    <li>Ersetzen Sie jetzt alle `NA`s in der Matrix mit dem Wert $1$. Nutzen Sie dazu die Funktion `is.na()`.</li>
+    <li>Ersetzen Sie jetzt alle `NA`s in der Matrix mit dem Wert \(1\). Nutzen Sie dazu die Funktion `is.na()`.</li>
     </ul>
 </ol>
 
