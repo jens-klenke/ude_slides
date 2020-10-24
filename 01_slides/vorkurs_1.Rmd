@@ -53,7 +53,7 @@ myBib <- ReadBib("assets/example.bib", check = FALSE)
 1. Matritzen
 
 ---
-# *R* und *RStudio*
+## *R* und *RStudio*
 
 <code>R</code> ist eine freie Programmiersprache für statistische Berechnungen und Grafiken. 
 Sie wurde von Statistikern für Anwender mit statistischen Aufgaben entwickelt.
@@ -72,9 +72,9 @@ $\Rightarrow$ **Wir arbeiten daher mit RStudio** `r icon::fa_smile(color = '#004
 **Wichtig: *RStudio* ist nicht gleich <code>R</code>! Ohne eine <code>R</code>-Installation bringt *RStudio* nichts.** 
   
 ---
-# Grundlagen
+## Grundlagen
   
-## Grundrechenarten
+### Grundrechenarten
 
 <code>R</code> kann als einfacher Taschenrechner benutzt werden. 
 
@@ -86,8 +86,8 @@ $\Rightarrow$ **Wir arbeiten daher mit RStudio** `r icon::fa_smile(color = '#004
 ```
 
 ---
-# Grundlagen
-## ... und mehr 
+## Grundlagen
+### ... und mehr 
 
 ```{r, results='hold'}
 # "12 hoch 12"
@@ -107,8 +107,8 @@ sin(2 * pi)
 ```
 
 ---
-# Grundlagen
-## Wissenschaftliche Notation
+## Grundlagen
+### Wissenschaftliche Notation
 
 <br>
 </br>
@@ -127,8 +127,8 @@ $$-2.449294 \times 10^{-16} = \dfrac{-2.449294}{10.000.000.000.000.000} \approx 
 (Auf den zweiten Blick ist die wissensschaftliche Notation also tatsächlich nutzerfreundlicher.) 
 
 ---
-# Grundlagen
-## Variablen 
+## Grundlagen
+### Variablen 
 
 Variablen werden mit dem Zuweisungsoperator `<-` ("Kleinerzeichen" gefolgt von "Minuszeichen") erzeugt bzw. überschrieben.
 
@@ -144,7 +144,7 @@ x - y
 ```
 
 ---
-# Grundlagen
+## Grundlagen
 ### Achtung!
 
 **Häufiger Fehler:** 
@@ -166,16 +166,16 @@ Vergessen von `*`, wenn eine Variable mit einem Skalar multipliziert werden soll
 `R` interpretiert `3x` als Variable, jedoch dürfen Variablennamen nicht mit Ziffern beginnen! Wir erhalten eine Fehlermeldung!
 
 ---
-# Grundlagen
-## Kommentare 
+## Grundlagen
+### Kommentare 
 <br></br>
 Auf der vorherigen Folie steht im letzten Codesnippet eine kurze Erklärung angeführt von einem `#`. Dies kennzeichnet einen [Kommentar](https://de.wikipedia.org/wiki/Kommentar_(Programmierung)): 
 <br></br>
 Kommentare werden beim Ausführen des Codes nicht berücksichtigt. Wir nutzen Sie, um unseren Code (für uns und andere) verständlicher zu machen.
 
 ---
-# Grundlagen
-## Datentypen
+## Grundlagen
+### Datentypen
 
 Neben den Zahlen gibt es in `R` noch weitere Datentypen. Die für uns wichtigsten (Zahlen eingeschlossen) sind:  
 
@@ -188,8 +188,8 @@ class(b)
 ```
 
 ---
-# Grundlagen
-## Datentypen
+## Grundlagen
+### Datentypen
 
 
 ```{r}
@@ -203,8 +203,8 @@ class(d)
 Vergessen von Anführungszeichen bei Schriftzeichen und Kleinschreiben von `TRUE` oder `FALSE`.  
 
 ---
-# Vektoren 
-## Erzeugen eines Vektors
+## Vektoren 
+### Erzeugen eines Vektors
 
 Bisher haben wir nur Variablen betrachtet, die einen einzigen Wert enthalten. 
 Die große Stärke von `R` sind vektor- und matrixbasierte Funktionen. 
@@ -225,8 +225,8 @@ logical_v   <- c(T, F, F)
 **Achtung:** `T` und `F`sollten nicht als Varibalen verwendet werden. Lange Version ist weniger fehleranfällig. 
 
 ---
-# Vektoren 
-## Erzeugen eines Vektors
+## Vektoren 
+### Erzeugen eines Vektors
 
 <br></br>
 
@@ -240,8 +240,8 @@ seq(from = 1, to = 10, by = 1)
 ```
 
 ---
-# Vektoren 
-## Missing Values
+## Vektoren 
+### Missing Values
 
 Bei echten Daten kommt es häufig vor, dass es zu einigen Beobachtungen keine Daten für manche Variablen gibt. 
 
@@ -256,8 +256,8 @@ Problem: Einer der Teilnehmer hat keine Angabe zur Körpergröße gemacht.
 - Für viele Funktionen kann das Vorgehen bei *Missing Values* festlegt werden (siehe auch Übungsaufgabe 5).   
 
 ---
-# Vektoren 
-## Missing Values
+## Vektoren 
+### Missing Values
 
 Beim Programmieren werden i.d.R. englische Namen verwendet. Meist sind diese kürzer und man vermeidet Probleme aufgrund von Umlauten. 
 
@@ -271,8 +271,8 @@ height <- c(184, 165, NA)
 ```
 
 ---
-# Vektoren
-## Subsetting von Vektoren 
+## Vektoren
+### Subsetting von Vektoren 
 
 Um eine Untermenge der Elemente eines Vektors anzusprechen (auch *Subsetting* genannt), nutzen wir in eckigen Klammern eingeschlossene Indizes.
 
@@ -283,12 +283,12 @@ logical_v[1:2]       # Gibt das 1. und 2. Element von logical_v aus
 ```
 
 ---
-# Vektoren
-## Subsetting von Vektoren 
+## Vektoren
+### Subsetting von Vektoren 
 
 **Häufiger Fehler:** Vergessen von `c()` im 2. Fall. Mehrere Indizes müssen als *Vektor* übergeben werden. 
 
-Wir können auch logische Vektoren für das Subsetting nutzen. Diese müssen dieselbe Länge haben wie der Vektor der "gesubsetted" werden soll. Es werden die Elemente herausgezogen, an deren Stellen der logische Vektor den Wert \texttt{TRUE} hat. 
+Wir können auch logische Vektoren für das Subsetting nutzen. Diese müssen dieselbe Länge haben wie der Vektor der "gesubsetted" werden soll. Es werden die Elemente herausgezogen, an deren Stellen der logische Vektor den Wert <code>TRUE</code> hat. 
 
 ```{r}
 x  <- c(7, 2, 5, 3, 9)
@@ -302,8 +302,8 @@ x[hv]
 Das ist hilfreich, da viele Funktionen einen logischen Vektor zurückgeben (z.B. `is.na()` und logische Operatoren, später mehr dazu). 
 
 ---
-# Vektoren
-## Ändern von Elementen 
+## Vektoren
+### Ändern von Elementen 
 
 Manchmal müssen Elemente eines Vektors *geändert* werden. Dazu nutzen wir die Subsetting zusammen mit dem Zuweisungsoperator. 
 
@@ -324,8 +324,8 @@ x[c(2, 4)] <- -1        # Setzte das 2. und das 4. Element gleich -1
 Wie sieht der erzeugte Vektor aus?  
 
 ---
-# Vektoren
-## Vektorbasierte Funktionen 
+## Vektoren
+### Vektorbasierte Funktionen 
 
 Wir betrachten nun den Vektor `age`. Dieser enthält das Alter von 5 Studierenden in diesem Kurs.
 
@@ -344,8 +344,8 @@ age <- c(24, 25, 29, 23, 26)
 Wie können wir das Durchschnittsalter berechnen?
 
 ---
-# Vektoren
-## Vektorbasierte Funktionen 
+## Vektoren
+### Vektorbasierte Funktionen 
 <br></br>
 **Antwort:**
 
@@ -357,8 +357,8 @@ age_sum / 5
 Dieses Vorgehen ist für kleine Vektoren noch machbar aber umständlich. Für große Vektoren ist das quasi unmöglich! 
 
 ---
-# Vektoren
-## Vektorbasierte Funktionen 
+## Vektoren
+### Vektorbasierte Funktionen 
 <br></br>
 Bessere Alternative: *Vordefinierte Funktionen*
 
@@ -375,8 +375,8 @@ mean(age)
 
 
 ---
-# Vektoren
-## I Need Help
+## Vektoren
+### I Need Help
 Damit haben wir schon einige `R`-Funktionen kennengelernt. Oft ist unklar, wie diese Funktionen funktionieren.
 
 $\Rightarrow$ `R`-Hilfe nutzen: 
@@ -396,8 +396,8 @@ Nicht verzweifeln, sondern einfach ein bisschen rumprobieren oder eine Suchmasch
 **Zwei extrem wichtige Fähigkeiten beim Programmieren, die gleich schon mal geübt werden können** `r icon::fa('grin-wink', color = '#004c93', size = 2)`
 
 ---
-# Vektoren
-## Vektorbasierte Funktionen --- Eine kleine Übersicht
+## Vektoren
+### Vektorbasierte Funktionen --- Eine kleine Übersicht
 
 ```{r, results= 'hide'}
 x <- c(5, 2, 1055, 101:200)
@@ -422,8 +422,8 @@ seq_along(x)    # Vektor mit Indizes der Elemente von x
 ```
 
 ---
-# Vektoren
-## Übungsaufgaben zu Vektoren --- 1
+## Vektoren
+### Übungsaufgaben zu Vektoren 
 
 1. Erzeugen Sie einen Vektor `numbers` mit den Elementen $$\{4 , 6, -3, 2.5, 18, \pi, 85\}$$
 
@@ -437,7 +437,7 @@ seq_along(x)    # Vektor mit Indizes der Elemente von x
 
 ---
 # Vektoren
-## Übungsaufgaben zu Vektoren --- 2
+## Übungsaufgaben zu Vektoren 
 
 <ol start="4">
     <li>Nutzen Sie die Funktion <code>seq()</code> um die Folge $\begin{pmatrix} 0, 0.5, 1, 1.5, \ldots, 99, 99.5, 100 \end{pmatrix}$ zu erzeugen. Wie viele Elemente besitzt dieser Vektor? Überprüfen Sie Ihre Vermutung mit <code>length()</code></li>
@@ -447,8 +447,8 @@ seq_along(x)    # Vektor mit Indizes der Elemente von x
 </ol>
 
 ---
-# Vektoren
-## Übungsaufgaben zu Vektoren --- 3
+## Vektoren
+### Übungsaufgaben zu Vektoren 
 <ol start="8">
     <li> Kopieren Sie folgenden Code in Ihr <code>R</code>-Skript und berechen Sie \(a + b\), \(a + x\),  \(a + y\) und \(a + z\). Finden Sie heraus, wie <code>R</code> jeweils vorgeht.</li>
 </ol>
@@ -467,8 +467,8 @@ z <- c(1, 2, 3, 4)
 </ol>
 
 ---
-# Matrizen
-## Matrizen erzeugen
+## Matrizen
+### Matrizen erzeugen
 
 <br></br>
 Wir können mehrere Vektoren des gleichen Datentyps und gleicher Länge zu einer Matrix zusammenfassen. 
@@ -482,8 +482,8 @@ xy
 ```
 
 ---
-# Matrizen
-## Matrizen erzeugen
+## Matrizen
+### Matrizen erzeugen
 
 <br></br>
 Außerdem können wir auch einen einzelnen Vektor in Matrixform bringen. 
@@ -494,8 +494,8 @@ matrix(1:6, ncol = 2)
 ```
 
 ---
-# Matrizen
-## Matrixsubsetting 
+## Matrizen
+### Matrixsubsetting 
 
 Um ein Element einer Matrix anzusprechen, müssen wir **zwei** Indizes verwenden: Einen für die *Zeile* und einen für die *Spalte* des gewünschten Elements. 
 
@@ -508,8 +508,8 @@ X[3, 2]
 ```
 
 ---
-# Matrizen
-## Matrixsubsetting 
+## Matrizen
+### Matrixsubsetting 
 
 <br></br>
 Um dieses Element zu ändern, nutzen wir wieder den Zuweisungsoperator `<-`.
@@ -520,8 +520,8 @@ X
 ```
 
 ---
-# Matrizen
-## Matrixsubsetting 
+## Matrizen
+### Matrixsubsetting 
 
 Um ganze Spalten der Matrix zu erhalten, wird der Index für die *Zeile* freigelassen.  
 ```{r}
@@ -535,8 +535,8 @@ X[2:3, ] # gibt die 2. und 3. Zeile zurück
 ```
 
 ---
-# Matrizen
-## Matrixalgebra --- Übersicht 
+## Matrizen
+### Matrixalgebra --- Übersicht 
 
 ```{r, results='hide'}
 A <- cbind(c(13, 4, 8), c(2, 8.2, 1))
@@ -556,8 +556,8 @@ eigen(C)          # Eigenwerte und Eigenvektoren
 ```
 
 ---
-# Matrizen
-## Matrixbasierte Funktionen 
+## Matrizen
+### Matrixbasierte Funktionen 
 
 <br></br>
 Wie bei Vektoren gibt es auch eine Reihe von Funktionen für Matrizen. 
@@ -575,8 +575,8 @@ rowMeans(X)  # Zeilenmittelwerte
 ```
 
 ---
-# Matritzen
-## Übungsaufgaben zu Matritzen --- 1
+## Matritzen
+### Übungsaufgaben zu Matritzen 
 
 1. Erzeugen Sie mit dem Inputvektor `1:12` und <code>matrix()</code> folgende Matrix `X`. 
 
@@ -596,8 +596,8 @@ $$X =\begin{pmatrix}
  
 
 ---
-# Matritzen
-## Übungsaufgaben zu Matritzen --- 2
+## Matritzen
+### Übungsaufgaben zu Matritzen 
 <br></br>
 
 <ol start="4">
