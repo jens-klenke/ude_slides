@@ -1,0 +1,193 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "Author"
+date: "Date"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/ude_fonts.css", "assets/ude.css"]
+    self_contained: true # if true, fonts will be stored locally
+    seal: true # show a title slide with YAML information
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+    nature:
+      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9' #alternatives '16:9' or '4:3' or others e.g. 13:9
+      navigation:
+        scroll: TRUE #disable slide transitions by scrolling
+---
+
+```{r, load_refs, include = FALSE, echo=FALSE, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE, 
+           bib.style = "authoryear", 
+           cite.style = 'authoryear', 
+           style = "markdown",
+           hyperlink = FALSE, 
+           dashed = FALSE)
+myBib <- ReadBib("assets/example.bib", check = FALSE)
+
+# packages
+source(here::here('00_packages/packages.R'))
+```
+
+# Installing 
+
+These are slides made with the **xaringan** package which is on CRAN available, but I recommend installing the development release from `r icon::fa("github")`
+
+```{r, eval = FALSE}
+devtools::install_github('yihui/xaringan')
+```
+
+.pull-left[
+You will also need two other CSS files for the custom University of Duisburg-Essen styling:
+
+- `edu_fonts.css`
+- `edu.css`
+]
+.pull-right[
+If you want the University signet to show up on the title slide, you'll also need:
+
+- `signet_ude_rgb_neg.png`
+]
+
+These are available in the assets folder of the GitHub code repository [`r icon::fa("github")` `jens-klenke/slides_xaringan`](https://github.com/jens-klenke/slides_xaringan/tree/main/01_slides/assets)
+
+To make things easy to get started, I recommend downloading a copy of the `slides_xaringan` repo [`r icon::fa("file-archive")`](https://github.com/jens-klenke/slides_xaringan/archive/main.zip) and make changes to the slides. 
+
+
+---
+# xaringan 
+
+- Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+- You can see all the goodies like this (hint press `p`).
+
+- Check out more in-depth tutorial [here](https://slides.yihui.name/xaringan/#1)
+
+
+---
+## Why xaringan/remark.js? `r icon::fa("check-circle", pull = "right")`
+
+- Printing (in Google Chrome) is a lot more reliable for xaringan/remark.js
+- The customisation of the CSS and using it is a lot easier in xaringan/remark.js
+- You almost never need to write any manual HTML chunks (e.g. `<div style="text-align: center;"></div>`)
+- With remark.js' Markdown, you can add arbitrary CSS classes to elements using syntax `.className[elements]`, which is very handy compared to `<span class="className"></span>`
+- You can write slide notes under three question marks `???`. These notes are only displayed in the presentation mode, and only the speaker can see these notes. 
+- The keyboard shortcuts: press keys like `P` (presentation mode), `C` (clone slides to a new window, useful for presentation mode), `B` (black out), `M` (mirror the slide), and `H` (help), etc.
+
+More: [yihui.name/en/2017/08/why-xaringan-remark-js/](https://yihui.name/en/2017/08/why-xaringan-remark-js/)
+
+---
+
+# Scrolling R output
+
+If you just want a section of the output to be scrollable (not the whole page).  You need to define how many lines you want the "box" to show.  There are classes for `.scroll-box-8[]` for 8 lines, `.scroll-box-10[]` for 10 lines, ... , `.scroll-box-20[]` for 20 lines.
+
+### Example
+
+`.scroll-box-8[]` 
+
+.scroll-box-8[
+```{r}
+swiss[,1:3]
+```
+]
+
+.pull-down[
+Customized scroll boxes must be first implemented in the `edu.css` file.
+]
+---
+# googleVis
+
+Embedded by exporting to HTML and including as an iframe.
+
+```{r gvisMergeExample, results='asis', echo=FALSE, message=FALSE}
+library(googleVis)
+Geo <- gvisGeoChart(Exports, locationvar='Country', colorvar='Profit') 
+cat(Geo$html$chart, file="Geo.html")
+```
+<iframe src = "Geo.html" width = "100%" height = "90%" frameborder="0"></iframe>
+
+
+---
+
+## Content boxes `r icon::fa("box", pull = "right")`
+
+.content-box-blue[This is a `.content-box-blue[]` chunk.
+
+]
+
+--
+
+If you have just a few words, it only highlights the words:
+
+
+.content-box-army[`.content-box-army[]`] .content-box-yellow[`.content-box-yellow[]`]
+
+.content-box-red[`.content-box-red[]`] .content-box-purple[`.content-box-purple[]`]
+
+--
+
+If the text includes a new line character, you get a 100% width box.  I've used `.columns-2[]` it's 100% of the column width.
+
+.columns-2[
+.content-box-gray[
+`.content-box-gray[]`
+]
+.content-box-green[
+`.content-box-green[]`
+]
+]
+
+---
+
+## Quotes `r icon::fa("quote-right", pull = "right")`
+
+.small[
+We can include **block quotes** using<br>
+`<blockquote>Quote goes here</blockquote>` 
+
+or<br>
+`> Quote goes here`
+
+or `.blockquote[Quote here]`
+]
+.pull-left[
+
+<blockquote>
+Statistics is the grammar of science. 
+.right[-- <cite>Karl Pearson</cite>]
+</blockquote>
+
+.blockquote[Quote]
+
+> Quote quote  
+]
+
+
+
+.pull-right[.small[
+```
+<blockquote>
+Statistics is the grammar of science. 
+.right[-- <cite>Karl Pearson</cite>]
+</blockquote>
+
+
+
+.blockquote[Quote]
+
+
+
+> Quote quote
+```
+
+]]
+
+
+
+

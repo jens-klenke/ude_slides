@@ -5,7 +5,7 @@ author: "Jens Klenke"
 date: " March 3rd 2020"
 output:
   xaringan::moon_reader:
-    css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
+    css: ["default", "assets/ude_fonts.css", "assets/ude.css"]
     self_contained: true # if true, fonts will be stored locally
     seal: true # show a title slide with YAML information
     includes:
