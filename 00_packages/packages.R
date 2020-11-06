@@ -13,4 +13,7 @@ pacman::p_load(dplyr,
                gridExtra,
                cowplot,
                png,
-               knitr)
+               knitr,
+               xaringan,
+               leaflet,
+               plotly)
