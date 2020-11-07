@@ -58,6 +58,10 @@ These are available in the assets folder of the GitHub code repository [`r icon:
 
 To make things easy to get started, I recommend downloading a copy of the `ude_slides` repo [`r icon::fa("file-archive")`](https://github.com/jens-klenke/ude_slides/archive/main.zip) and make changes to the slides. 
 
+???
+
+NOTES NOTES
+
 ---
 # xaringan 
 
@@ -79,11 +83,26 @@ To make things easy to get started, I recommend downloading a copy of the `ude_s
 - The keyboard shortcuts: press keys like `P` (presentation mode), `C` (clone slides to a new window, useful for presentation mode), `B` (black out), `M` (mirror the slide), and `H` (help), etc.
 
 More: [yihui.name/en/2017/08/why-xaringan-remark-js/](https://yihui.name/en/2017/08/why-xaringan-remark-js/)
+---
+# New Slide and Notes 
+
+
+
+
+```
+---
+```
+```
+´r mean()`
+```
 
 ---
 # Using `R` directly in a Markdown
 
 With Rmarkdown/xaringan `R` code can directly implemented. There are two ways to implement R Code. If we want to use r code *inline* we put the command into this command. 
+
+.ilr[r dim(mtcars)[2]]
+
 
 ---
 # Scrolling `R` output

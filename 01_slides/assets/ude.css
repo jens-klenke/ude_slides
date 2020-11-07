@@ -369,25 +369,6 @@ slides > slide {
 }
 
 
-
-/*~~~~~~~~~~~~~~~~*/
-/* USYD additions */
-/*~~~~~~~~~~~~~~~~*/
-
-
-/* background-image: url(https://sydney.edu.au/etc/designs/corporate-commons/bower_components/corporate-frontend/dist/assets/img/USydLogo.svg); */
-  /*
-  background-position: 10% 90%, 100% 50%;
-  background-size: 160px, 50% 100%;
-  background-color: #e64626;
-  /*padding-left: 100px;   delete this for 4:3 aspect ratio */
-/*
-}
-*/
- 
- 
- 
- 
  
 .title-slide {
   background-position: 90% 90%;
@@ -490,7 +471,16 @@ blockquote, .blockquote {
   text-shadow: 0 0 4px #424242;
 }
 
+/* code look*/
+.ilr {
+  font-family: monospace;
+  padding: 2px 2px;
+  background-color:  #F5F5F5; /* #e4e6e8; */
+}
 
+.ilr:before, .ilr:after {
+    content: "`";
+}
 
 /* if wanted to change mathjax formatting
 .remark-inline-code .mjx-chtml {
