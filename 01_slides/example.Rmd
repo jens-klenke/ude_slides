@@ -99,10 +99,29 @@ More: [yihui.name/en/2017/08/why-xaringan-remark-js/](https://yihui.name/en/2017
 ---
 # Using `R` directly in a Markdown
 
-With Rmarkdown/xaringan `R` code can directly implemented. There are two ways to implement R Code. If we want to use r code *inline* we put the command into this command. 
+.font70[
+With Rmarkdown/xaringan `R` code can directly implemented. There are two ways to implement R Code. If we want to use r code *inline* we put the command into .ilr[r ]. For example if we want to write some continuous text and with the number of variables of the `mtcars` data set has, we just write .ilr[r dim(mtcars)[2]] (`mtcars` has `r dim(mtcars)[2]` variables).  
 
-.ilr[r dim(mtcars)[2]]
+For bigger outputs, for instance plots or a summary of a `lm` object, there exists an other method. We start a new line with .olr[{r}] and start in the next line with our `R` code, to close the `R`-chunk we just write .olr[ ]. 
 
+Example:
+
+.pull-left[
+![](r_code_chunk.PNG)
+
+]
+.pull-right[
+
+```{r, fig.height = 2.5}
+ggplot2::ggplot(mtcars, aes(x = mpg, y = hp))+
+  geom_point()+
+  theme_minimal()
+```
+
+]]
+.pull-down[
+More information how to use and format `R` output in a `R Markdown` can be found on the [RStudio](https://rmarkdown.rstudio.com/lesson-1.html) side. 
+]
 
 ---
 # Scrolling `R` output
@@ -173,12 +192,6 @@ x <- seq_len(nrow(volcano))
 y <- seq_len(ncol(volcano)) 
 plot_ly() %>% add_surface(x = ~x, y = ~y, z = ~volcano)
 ```
-
-
-
-
-
-
 
 
 ---
