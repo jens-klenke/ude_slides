@@ -495,6 +495,12 @@ blockquote, .blockquote {
 }
 
 
+/* alingnment */
+.middle{
+vertical-align: middle;
+}
+
+
 /* if wanted to change mathjax formatting
 .remark-inline-code .mjx-chtml {
   color: blue;

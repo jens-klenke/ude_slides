@@ -84,20 +84,32 @@ NOTES NOTES
 
 More: [yihui.name/en/2017/08/why-xaringan-remark-js/](https://yihui.name/en/2017/08/why-xaringan-remark-js/)
 ---
-# New Slide and Notes 
+# YAML, Slides and Notes 
+
+The `YAML` is the head of the document in which one defines all the settings and certain aspects as author, title, date.
 
 
-
+To start a new slide use three dashes `---` on a new line with no trailing white space. If the dashes aren't on their own line or there's a white space after it won't work.
 
 ```
 ---
 ```
+If we want to change the style of a slide we can do so with the option `class` directly after the three dashes for a new slide
+
 ```
-´r mean()`
+---
+class: columns-2
 ```
 
+Similar to start a new line use three questionmarks `???` on a new line with no trailing white space, to take notes for your presentation. 
+```
+???
+```
+
+
+
 ---
-# Using `R` directly in a Markdown
+# Embaded `R` Code 
 
 .font70[
 With Rmarkdown/xaringan `R` code can directly implemented. There are two ways to implement R Code. If we want to use r code *inline* we put the command into .ilr[r ]. For example if we want to write some continuous text and with the number of variables of the `mtcars` data set has, we just write .ilr[r dim(mtcars)[2]] (`mtcars` has `r dim(mtcars)[2]` variables).  
@@ -124,7 +136,7 @@ More information how to use and format `R` output in a `R Markdown` can be found
 ]
 
 ---
-# Scrolling `R` output
+# Scrolling `R` Output
 
 If you just want a section of the output to be scrollable (not the whole page).  You need to define how many lines you want the "box" to show.  There are classes for `.scroll-box-8[]` for 8 lines, `.scroll-box-10[]` for 10 lines, ... , `.scroll-box-20[]` for 20 lines.
 
@@ -143,7 +155,7 @@ Customized scroll boxes must be first implemented in the `edu.css` file.
 ]
 
 ---
-## Lists, increments and footnotes`r icon::fa("list", pull = "right")`
+## Lists, Increments and Footnotes`r icon::fa("list", pull = "right")`
 
 .pull-left[
 
@@ -184,7 +196,14 @@ The two dash increments don't work inside class calls.  For example, you can't h
 ]
 
 ---
-# Interactive graphics
+# Annimated Graphics
+
+```{r out.width='30%', fig.align = 'center'}
+knitr::include_graphics("power_with_densities.gif")
+```
+
+---
+# Interactive Graphics
 
 ```{r out.width='100%', fig.height= 5}
 
@@ -195,14 +214,21 @@ plot_ly() %>% add_surface(x = ~x, y = ~y, z = ~volcano)
 
 
 ---
-# Interactive maps 
-
-```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+# Interactive Maps 
+.font70[
+```{r out.width='100%', fig.height = 5, eval=require('leaflet')}
 library(leaflet)
-leaflet() %>% addTiles() %>% setView(7.00487, 51.46367, zoom = 15)
-# .46367 .00487
+leaflet() %>% addTiles() %>% setView(7.008403713908398, 51.46402372535478, zoom = 16) %>%
+  addPopups(7.008403713908398, 51.46402372535478, '<b>Chair of Econometrics',
+            options = popupOptions(closeButton = FALSE)
+  )
 ```
-
+]
+---
+# Embeded videos 
+.center[
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vZMuu77ocMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
 ---
 
 ## Content boxes `r icon::fa("box", pull = "right")`
