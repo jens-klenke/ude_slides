@@ -198,7 +198,7 @@ The two dash increments don't work inside class calls.  For example, you can't h
 # Annimated Graphics
 
 ```{r out.width='30%', fig.align = 'center'}
-knitr::include_graphics("power_with_densities.gif")
+knitr::include_graphics("assets/power_with_densities.gif")
 ```
 
 ---

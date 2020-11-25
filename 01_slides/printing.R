@@ -1,13 +1,7 @@
 ####
-# needs chrome
+#  The Chrome browser is necessary for this to work
 
 # 1
-pagedown::chrome_print(here::here("01_slides/vorkurs_1.Rmd"))
-
-# 2 
-pagedown::chrome_print(here::here("01_slides/vorkurs_2.Rmd"))
-
-# 3
-pagedown::chrome_print(here::here("01_slides/vorkurs_3.Rmd"))
+pagedown::chrome_print('Path to the RMD file')
 
 
