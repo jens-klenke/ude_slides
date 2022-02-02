@@ -17,3 +17,6 @@ pacman::p_load(dplyr,
                xaringan,
                leaflet,
                plotly)
+
+if (!require("icons")) devtools::install_github('mitchelloharawild/icons')
+library(icons)

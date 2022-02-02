@@ -36,7 +36,7 @@ source(here::here('00_packages/packages.R'))
 
 # Installing 
 
-These are slides made with the **xaringan** package which is on CRAN available, but I recommend installing the development release from `r icon::fa("github")`
+These are slides made with the **xaringan** package which is on CRAN available, but I recommend installing the development release from `r icons::fontawesome('github')`
 
 ```{r, eval = FALSE}
 devtools::install_github('yihui/xaringan')
@@ -54,13 +54,14 @@ If you want the University signet to show up on the title slide, you'll also nee
 - `signet_ude_rgb_neg.png`
 ]
 
-These are available in the assets folder of the GitHub code repository [`r icon::fa("github")` `jens-klenke/ude_slides`](https://github.com/jens-klenke/ude_slides/tree/main/01_slides/assets)
+These are available in the assets folder of the GitHub code repository [`r icons::fontawesome('github')` `jens-klenke/ude_slides`](https://github.com/jens-klenke/ude_slides/tree/main/01_slides/assets)
 
-To make things easy to get started, I recommend downloading a copy of the `ude_slides` repo [`r icon::fa("file-archive")`](https://github.com/jens-klenke/ude_slides/archive/main.zip) and make changes to the slides. 
+To make things easy to get started, I recommend downloading a copy of the `ude_slides` repo [`r icons::fontawesome('file-archive') `](https://github.com/jens-klenke/ude_slides/archive/main.zip) and make changes to the slides. 
 
 ???
 
 NOTES NOTES
+
 
 ---
 # xaringan 
@@ -73,7 +74,7 @@ NOTES NOTES
 
 
 ---
-## Why xaringan/remark.js? `r icon::fa("check-circle", pull = "right")`
+## Why xaringan/remark.js? `r  icons::icon_style(icons::fontawesome('check-circle'),  fill = "#004c93", float = 'right')`
 
 - Printing (in Google Chrome) is a lot more reliable for xaringan/remark.js
 - The customisation of the CSS and using it is a lot easier in xaringan/remark.js
@@ -118,12 +119,17 @@ For bigger outputs, for instance plots or a summary of a `lm` object, there exis
 Example:
 
 .pull-left[
-![](r_code_chunk.PNG)
+```{r, fig.height = 2.5, eval = FALSE}
+ggplot2::ggplot(mtcars, aes(x = mpg, y = hp))+
+  geom_point()+
+  theme_minimal()
+```
+
 
 ]
 .pull-right[
 
-```{r, fig.height = 2.5}
+```{r, fig.height = 2.5, echo = FALSE}
 ggplot2::ggplot(mtcars, aes(x = mpg, y = hp))+
   geom_point()+
   theme_minimal()
@@ -154,7 +160,7 @@ Customized scroll boxes must be first implemented in the `edu.css` file.
 ]
 
 ---
-## Lists, Increments and Footnotes`r icon::fa("list", pull = "right")`
+## Lists, Increments and Footnotes`r icons::icon_style(icons::fontawesome('list'),  fill = "#004c93", float = 'right')`
 
 .pull-left[
 
@@ -231,7 +237,7 @@ leaflet() %>% addTiles() %>% setView(7.008403713908398, 51.46402372535478, zoom 
 
 ---
 
-## Content boxes `r icon::fa("box", pull = "right")`
+## Content boxes `r icons::icon_style(icons::fontawesome('box'),  fill = "#004c93", float = 'right')`
 
 .content-box-blue[This is a `.content-box-blue[]` chunk.
 
@@ -261,7 +267,7 @@ If the text includes a new line character, you get a 100% width box.  I've used 
 
 ---
 
-## Quotes `r icon::fa("quote-right", pull = "right")`
+## Quotes `r icons::icon_style(icons::fontawesome('quote-right'),  fill = "#004c93", float = 'right')`
 
 .small[
 We can include **block quotes** using<br>
@@ -303,3 +309,5 @@ Statistics is the grammar of science.
 ```
 
 ]]
+
+
