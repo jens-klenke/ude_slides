@@ -34,6 +34,24 @@ myBib <- ReadBib("assets/example.bib", check = FALSE)
 source(here::here('00_packages/packages.R'))
 ```
 
+```{r xaringanExtra_progress-bar, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#004c93", location = "bottom")
+```
+
+```{r xaringanExtra-clipboard_2, echo=FALSE}
+# copy button styles mainly in ude.css 
+# https://github.com/gadenbuie/xaringanExtra
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #00ff00\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+
 # Installing 
 
 These are slides made with the **xaringan** package which is on CRAN available, but I recommend installing the development release from `r icons::fontawesome('github')`
@@ -309,5 +327,4 @@ Statistics is the grammar of science.
 ```
 
 ]]
-
 
